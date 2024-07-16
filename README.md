@@ -4,7 +4,7 @@
 <div align="center">
   <!-- PROJECT LOGO -->
   <a href="https://github.com/SenaThenu/digit-recognizer">
-    <img src="https://github.com/SenaThenu/digit-recognizer/blob/main/public/assets/favicon.png" alt="Logo" height="250">
+    <img src="https://github.com/SenaThenu/digit-recognizer/blob/main/public/assets/favicon.png" alt="Logo" height="150">
   </a>
 
   <!-- PROJECT TITLE -->
