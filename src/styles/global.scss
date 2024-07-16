@@ -186,7 +186,7 @@ main {
     margin-bottom: 10px;
 
     .pred-placeholder-img {
-        width: 100px;
+        width: 80px;
     }
 }
 
@@ -223,5 +223,11 @@ footer {
         &:hover {
             transform: scale(1.08);
         }
+    }
+}
+
+@media (max-width: 700px) {
+    main {
+        flex-direction: column;
     }
 }

@@ -80,23 +80,6 @@ function resetCanvas() {
     setPredPlaceholder();
 }
 
-// function _getPredictedDigit(predsArray) {
-//     // normalising the array
-//     const max = Math.max(...predsArray);
-//     console.log(max);
-//     predsArray = predsArray.map((num) => num / max);
-
-//     // finding the max
-//     let maxIndex = 0;
-//     for (let i = 0; i < predsArray.length; i++) {
-//         console.log(`Comparing: ${predsArray[i]} with ${predsArray[maxIndex]}`);
-//         if (predsArray[i] > predsArray[maxIndex]) {
-//             maxIndex = i;
-//         }
-//     }
-//     return maxIndex;
-// }
-
 // predicting the digit
 async function predictDigit() {
     try {
@@ -134,7 +117,7 @@ function setPredPlaceholder() {
     newElement.src = "./assets/sparkles.png";
     newElement.alt = "Sparkles";
     newElement.classList.add("pred-placeholder-img");
-    predictionContainer.appendChild(newElement); // you can append children to any element
+    predictionContainer.appendChild(newElement);
 }
 
 function setPredictedDigit(digit) {
@@ -142,5 +125,5 @@ function setPredictedDigit(digit) {
     const newElement = document.createElement("h2");
     newElement.textContent = digit;
     newElement.classList.add("predicted-digit");
-    predictionContainer.appendChild(newElement); // you can append children to any element
+    predictionContainer.appendChild(newElement);
 }
