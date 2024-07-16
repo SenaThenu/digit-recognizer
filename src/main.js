@@ -24,7 +24,7 @@ let model;
 // loading it only once
 async function loadModel() {
     if (!model) {
-        model = await tf.loadLayersModel("/assets/model.json");
+        model = await tf.loadLayersModel("/model.json");
         console.log(model.summary()); // Log the model summary for debugging
     }
 }
