@@ -25,7 +25,6 @@ let model;
 async function loadModel() {
     if (!model) {
         model = await tf.loadLayersModel("./model.json");
-        console.log(model.summary()); // Log the model summary for debugging
     }
 }
 
@@ -93,7 +92,6 @@ async function predictDigit() {
             .expandDims(0)
             .expandDims(-1)
             .div(255);
-        console.log("Shape of img:", img.shape);
 
         const preds = model.predict(img);
         const predsArray = await preds.array(); // Convert to a standard array
@@ -103,7 +101,6 @@ async function predictDigit() {
             (iMax, current, i, arr) => (current > arr[iMax] ? i : iMax),
             0
         );
-        console.log(predictedDigit);
 
         setPredictedDigit(predictedDigit.toString());
     } catch (e) {
