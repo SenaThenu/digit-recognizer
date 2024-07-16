@@ -32,7 +32,7 @@ async function loadModel() {
 let isDrawing = false;
 resetCanvas();
 
-// drawing logic
+// mouse events
 canvas.addEventListener("mousedown", () => {
     isDrawing = true;
 });
@@ -51,9 +51,26 @@ canvas.addEventListener("mouseenter", (event) => {
     }
 });
 canvas.addEventListener("mousemove", draw);
+
+// touch events
+canvas.addEventListener("touchstart", (event) => {
+    isDrawing = true;
+    draw(event.touches[0]); // Call draw for the initial touch
+});
+canvas.addEventListener("touchend", () => {
+    isDrawing = false;
+    ctx.beginPath();
+});
+canvas.addEventListener("touchmove", (event) => {
+    event.preventDefault(); // Prevent scrolling
+    draw(event.touches[0]);
+});
+
+// button events
 clearBtn.addEventListener("click", resetCanvas);
 predictBtn.addEventListener("click", predictDigit);
 
+// drawing logic
 function draw(event) {
     if (!isDrawing) return;
     ctx.lineWidth = 21;
