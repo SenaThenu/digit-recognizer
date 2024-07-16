@@ -1,0 +1,17 @@
+// handles all the colour
+
+// colour of main components
+$text: hsl(210, 50%, 92%);
+$background: hsl(217, 72%, 7%);
+$primary: hsl(212, 77%, 34%);
+$secondary: hsl(205, 59%, 50%);
+$accent: hsl(201, 97%, 60%);
+$glass-bg: linear-gradient(hsla(212, 77%, 34%, 0.5), hsla(201, 97%, 60%, 0.3));
+
+// gradients
+$linearPrimarySecondary: linear-gradient(hsl(212, 77%, 34%), hsl(205, 59%, 50%));
+$linearPrimaryAccent: linear-gradient(hsl(212, 77%, 34%), hsl(201, 97%, 60%));
+$linearSecondaryAccent: linear-gradient(hsl(205, 59%, 50%), hsl(201, 97%, 60%));
+$radialPrimarySecondary: radial-gradient(hsl(212, 77%, 34%), hsl(205, 59%, 50%));
+$radialPrimaryAccent: radial-gradient(hsl(212, 77%, 34%), hsl(201, 97%, 60%));
+$radialSecondaryAccent: radial-gradient(hsl(205, 59%, 50%), hsl(201, 97%, 60%));

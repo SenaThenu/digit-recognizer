@@ -1,0 +1,21 @@
+@use "palette";
+
+// effects
+@mixin glass-effect($blur: 20px) {
+  background: palette.$glass-bg;
+  backdrop-filter: blur($blur);
+}
+
+// animations
+@mixin fade-in($transition: 1s ease) {
+    animation: fade-in-anim $transition;
+  }
+  
+  @keyframes fade-in-anim {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
