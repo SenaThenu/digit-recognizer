@@ -1,0 +1,227 @@
+//////////////////////////////
+// imports
+//////////////////////////////
+
+@use "theme";
+@use "palette";
+@use "mixins";
+
+//////////////////////////////
+// root
+//////////////////////////////
+
+*,
+*:after,
+*:before {
+    margin: 0;
+    box-sizing: border-box;
+    color: palette.$text;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.1rem;
+}
+body {
+    background-color: palette.$background;
+}
+
+//////////////////////////////
+// headings
+//////////////////////////////
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Titillium Web';
+    font-weight: theme.$bold;
+}
+
+h1 {font-size: 5.6rem}
+
+h2 {font-size: 4rem}
+
+h3 {font-size: 2.8rem}
+
+h4 {font-size: 2rem}
+
+h5 {font-size: 1.5rem}
+
+
+//////////////////////////////
+// primary components
+//////////////////////////////
+
+// content contains all the elements
+#content {
+    @include mixins.fade-in($transition: theme.$slow);
+}
+
+//////////////////////////////
+// header
+//////////////////////////////
+
+// navigation bar
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 85vw;
+    max-width: 56rem;
+    z-index: 10;
+
+    position: fixed;
+    top: 0.75rem;
+    left: 50%;
+    transform: translate(-50%);
+
+    border-radius: 50px;
+
+    @include mixins.glass-effect
+}
+// title and the logo in the navigation bar
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: inherit;
+
+    padding: 0.25rem 0rem;
+
+    transform: scale(1);
+    transition: all theme.$fast;
+
+    .logo {
+        display: block;
+        margin-right: 0.5rem;
+        margin-top: 0.4rem;
+        background: transparent;
+
+        img {
+            background: transparent;
+            height: 3.5rem;
+            width: 3.5rem;
+        }
+    }
+
+    .title {
+        font-size: 1.8rem;
+        font-weight: theme.$bold;
+        background: transparent;
+    }
+
+    &:hover {
+        transform: scale(1.08);
+    }
+}
+
+//////////////////////////////
+// ui components
+//////////////////////////////
+
+button {
+    text-decoration: none;
+    
+    margin: 0.5rem;
+    padding: 0.5rem 1.5rem;
+
+    font-size: 1.3rem;
+
+    border-radius: 20px;
+    border: none;
+    
+    cursor: pointer;
+
+    transition: all theme.$fast;
+    @include mixins.glass-effect;
+
+    &:hover {
+        filter: brightness(115%);
+        transform: scale(1.03);
+    }
+}
+
+//////////////////////////////
+// main ui
+//////////////////////////////
+main {
+    margin-top: 7rem;
+    margin-right: 30px;
+    margin-left: 30px;
+
+    display: flex;
+    
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.draw-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#drawing-canvas {
+    border: 2px solid palette.$secondary;
+    border-radius: 15px;
+}
+
+#predict-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#predict-btn {
+    font-size: 1.5rem;
+    font-weight: theme.$bold;
+    padding: 0.5rem 5rem;
+}
+
+#pred-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    .pred-placeholder-img {
+        width: 100px;
+    }
+}
+
+//////////////////////////////
+// footer
+//////////////////////////////
+
+footer {
+    padding: 2rem;
+    margin: 2rem auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 90vw;
+    border-radius: 50px;
+
+    @include mixins.glass-effect;
+}
+
+.social-media-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .social-media img {
+        height: 2rem;
+        margin: 0 1.15rem;
+
+        transform: scale(1);
+        transition: all theme.$fast;
+
+        &:hover {
+            transform: scale(1.08);
+        }
+    }
+}
