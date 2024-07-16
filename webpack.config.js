@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: "./src/index.js",
@@ -21,6 +22,9 @@ module.exports = {
             template: "./public/index.html",
             favicon: "./public/assets/favicon.png",
         }),
+        new CopyWebpackPlugin({
+            patterns: [{ from: "public/assets", to: "assets" }],
+        }),
     ],
     module: {
         rules: [
@@ -34,18 +38,24 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    "style-loader", // Creates `style` nodes from JS strings
-                    "css-loader", // Translates CSS into CommonJS
+                    "style-loader", // Injects styles into DOM
+                    "css-loader", // Turns CSS into CommonJS
                     "sass-loader", // Compiles Sass to CSS
                 ],
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
-                use: ["file-loader"],
+                type: "asset/resource",
+                generator: {
+                    filename: "assets/[name][ext]",
+                },
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: ["file-loader"],
+                type: "asset/resource",
+                generator: {
+                    filename: "assets/fonts/[name][ext]",
+                },
             },
         ],
     },
