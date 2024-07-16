@@ -96,6 +96,13 @@ _Let's show the power <img src="https://raw.githubusercontent.com/Tarikul-Islam-
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/SenaThenu"><img src="https://avatars.githubusercontent.com/u/98274844?v=4?s=100" width="100px;" alt="Senash Thenuja"/><br /><sub><b>Senash Thenuja</b></sub></a><br /><a href="#code-SenaThenu" title="Code">💻</a> <a href="#design-SenaThenu" title="Design">🎨</a> <a href="#data-SenaThenu" title="Data">🔣</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
